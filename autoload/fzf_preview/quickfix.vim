@@ -88,7 +88,7 @@ function! fzf_preview#quickfix#run(loc, bang) abort
                 \ 'sink*': function('s:error_handler'),
                 \ 'options': [printf('--prompt=%s> ', (a:loc ? 'LocList' : 'QuickFix')), '+m', "--delimiter=\t", '--nth=2..', '--with-nth=5..', '--layout=reverse-list', '--expect=' . expect_keys, '--preview-window', '+{4}-/2'],
                 \ 'placeholder': '{3}:{4}'
-                \ })))
+                \ }), a:bang))
 
     " if g:fzf_quickfix_syntax_on
     "     call s:syntax()
